@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <style>
+          <!--
+          body, html
+           {     margin: 0; /* Remove default margin */
+              padding: 0; /* Remove default padding */
+              overflow-x: hidden; /* Prevent horizontal overflow */
+              font-family: Arial, sans-serif;
+          }
+          .navbar
+          {   min-height: 30px;
+              z-index: 1000;
+              background-color: white;
+              width: 100%;
+              height: 80px;
+              padding: 0;
+              position: fixed; /* Makes the navbar stick to the top */
+              top: 0;/* Positions it at the top */
+              display: flex;
+              justify-content:space-between ; /* Centers the text vertically */
+              align-items: center;
+              padding: 0 0; /* Adds some padding */
+              box-shadow: 0 2px 5px rgb(115, 115, 115); /* Optional shadow for effect */
+          }
+      .imgStyle
+      {
+       width: 45px;
+       height: fixed;
+       justify-content: left;
+       margin: 3px;
+      }
+          .navbar h3
+           {
+              /* Removes default margin */
+              color: black;
+              text-align: center;
+              flex-grow: 1;
+              margin-left: 9%;
+
+          }
+          input{
+              height: 100%;
+              width: 75%;
+              display: block;
+              border-radius: 25px;
+              font-size: 20px;
+              padding: 8px 40px 8px 20px;
+              border: 2.4px black solid;
+          }
+      input:focus{
+          outline: none
+      }
+
+       .search-container
+          {
+              display: flex; /* Use flexbox for centering */
+              justify-content: center; /* Center the search bar */
+              align-items: center; /* Center vertically */
+              flex-grow: 1; /* Allow it to grow and take available space */
+          }
+
+          input[type="search"]
+          {
+               padding: 10px 20px 10px 0px; /* Adjust padding */
+                  border: 1px solid #ccc;
+                  border-radius: 25px; /* Rounded corners */
+                  width: 300px; /* Adjust width */
+                  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+                  outline: none;
+                  transition: border-color 0.3s; /* Smooth transition */
+          }
+          input[type="search"] :focus{
+              border-color: #007BFF;
+          }
+      -->
+
+
+
+      i {
+      font-size:25px;
+      transition:all 0.2s ease 0s;
+      }
+      i:hover{
+        color:rgb(0, 140, 255);
+      }
+
+      button{
+        background:none;
+        border: none;
+        cursor: pointer;
+      }
+
+      ul
+      {
+          list-style: none
+      }
+      li
+      {
+          display: inline-block;
+          margin-right: 1px;
+      }
+
+      .BigPics{
+          width: 100%;
+          height:auto;
+          margin-right: 10px;
+      }
+      .SmallPicsDiv
+      {
+        flex-grow: 1;
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;  
+    margin: 10px 0;
+    gap: 10px;
+    overflow: hidden;
+      }
+
+      .SmallPics
+      {
+
+      margin: 20px 10px 20px 10px;
+      width: calc(50% - 20px);
+      height: 700px;
+      object-fit:cover;
+
+
+      }
+      .image-count
+      {
+        padding-top: 6px;
+          display: flex;
+          flex-wrap: wrap;
+          width: 100%;
+          gap:10px;
+          height: auto;
+          justify-content: center;
+          align-items: center;
+          overflow: hidden;
+      }
+      .video-container {
+    display: flex;            
+    justify-content: center;  
+    align-items: center;      
+    flex-wrap: wrap;          
+}
+      .image-count video{
+      display: flex;
+          width: 50%;
+          height: 50%;
+          flex-grow: 1;
+          object-fit:contain;
+      }
+   .image-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.image-container video {
+    width: 48%;    
+    height: auto;  
+}
+
+      .image-text {
+          left: 50%;
+          transform: translateX(-50%);
+          position: absolute;  
+          bottom: 30px;   
+          color: white;  
+          font-weight: bold;
+          font-size: 60px;
+          font-family: sans-serif;
+          text-align: center;
+          padding:5px;  
+
+      }
+
+.big-image-container {
+    display: inline-flex;
+    flex-wrap: wrap;
+                     
+  width: 100%;       
+  height: auto;
+  overflow: hidden;  
+  justify-content: center;
+  align-items: center;
+}
+
+.big-image-container video {
+  width: 100%;  
+  height: auto; 
+}
+
+.big-image-text {
+   left: 50%;
+          transform: translateX(-50%);
+          position: absolute; /* Position the text absolutely within the container */
+          bottom: 30px; /* Position from the bottom */
+          color: white; /* Text color */
+          font-weight: bold;
+          font-size: 60px;
+          font-family: sans-serif;
+          text-align: center;
+          padding:5px; /* Padding around text */
+}
+ 
+a{
+  text-decoration: none
+}
+.text_on_Vid{
+          left: 50%;
+          transform: translateX(-50%);
+          position: absolute;  
+          bottom: 10px;  
+          color: white;  
+          font-weight: bold;
+          font-size: 60px;
+          font-family: sans-serif;
+          text-align: center;
+          padding:5px;  
+
+
+}
+body::-webkit-scrollbar{
+  display: none;
+}
+ .sidebar li{
+  color:white;
+  padding-bottom: 30px;
+}
+.sidebar{
+  margin-top:81px;
+  font-size:25px;
+  padding-right: 50px;
+  position: fixed;
+  top: 0;
+  left:0;
+  height:50vh;
+  width: 250px;
+  background-color: rgba(255,255,255,0.2);
+  backdrop-filter:blur(10px);
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+    </style>
+
+   </head>
+  <body>
+    <nav class="navbar" style="font-size: 30px; font-weight: bold">
+      <ul>
+        <li>
+          <button><i class="fa-solid fa-bars"></i></button>
+        </li>
+        <li>
+          <button><i class="fa-solid fa-user"></i></button>
+        </li>
+        <li>
+          <button><i class="fa-solid fa-cart-shopping"></i></button>
+        </li>
+      </ul>
+      <a href="/HomePage.html"><h3>PUNTO</h3></a>
+      <form><input type"search" placeholder="Search..."></form>
+    </nav>
+
+    <ul class="sidebar">
+      <li><span style="margin-right:280px;"><i class="fa-solid fa-xmark"></i></span></li>
+      <li>Home</li>
+      <li>Style</li>
+      <li>Electronics</li>
+      <li>Instrumnets</li>
+      <li>Sport</li>
+      <li>Watches</li>
+    </ul>
+ 
+
+<a href="sections\Style\StyleHome.html" class="video-link"><div id="trr" class="video-container"></div>
+  <div id="tempii">
+  <div class="image-count">
+    <div class="image-container">
+      <video paused src="" muted class="SmallPics"></video>
+      <span class="text_on_Vid" style="font-size:90px; font-family: sans-serif;">STYLE</span>
+    </div>
+  </div>
+</div></a>
+
+
+
+<script>
+  const video = document.getElementById('hoverVideo');
+document.addEventListener("DOMContentLoaded", printVideo);
+  function printVideo() {
+    const Vid = document.getElementById('trr');
+    for (let i = 1,k=1; i <= 2; i++) {
+      const video = document.createElement('video');
+      video.src = `/HomeGallary/BigVid${i}.mp4`;
+      video.className = "BigPics";
+      video.muted = true;
+      video.loop = true;
+      video.style.margin="0px 10px";
+      video.autoplay = true;
+      if(i==1){
+           video.style.margin="0px";
+           video.style.marginRight="0px";
+      }
+      video.pause();
+      Vid.appendChild(video);
+        video.addEventListener('mouseenter', () => {
+        video.play();
+      });
+
+      video.addEventListener('mouseleave', () => {
+        video.pause();
+        video.currentTime = 0; // Reset to the beginning
+      });
+        for(let j=1;j<=2;j++,k++){
+          const video2 = document.createElement('video');
+          video2.src = `/HomeGallary/SmallVid${k}.mp4`;
+          video2.className = "SmallPics";
+          video2.muted = true;
+          video2.loop = true;
+          video2.autoplay = true;
+          video2.pause();
+          if(k%2==0){
+            video2.style.margin="20px 10px";
+          }
+          Vid.appendChild(video2);
+ video2.addEventListener('mouseenter', () => {
+        video2.play();
+      });
+
+      video2.addEventListener('mouseleave', () => {
+        video2.pause();
+        video2.currentTime = 0; // Reset to the beginning
+      });
+        }
+    }
+  }
+
+</script>
+
+    <div id="output"></div>
+
+    <div style="height: 4000px; width: 100%"></div>
+<div style="display: flex; ">
+    <video src="HomeGallary/BigVid1.mp4"></video>
+    <span style="position: absolute; font-size: 80px; color: white;margin-top:80%;">hrello</span></div>
+  </body>
+</html>

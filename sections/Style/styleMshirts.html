@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      
+      body,
+      html 
+      {
+        margin: 0;  
+        padding: 0; 
+        overflow-x: hidden;  
+        font-family: Arial, sans-serif;
+      }
+      .navbar {
+        min-height: 30px;
+        z-index: 1000;
+        background-color: white;
+        width: 100%;
+        height: 80px;
+        padding: 0;
+        position: fixed;  
+        top: 0;  
+        display: flex;
+        justify-content: space-between;  
+        align-items: center;
+        padding: 0 0;  
+        box-shadow: 0 2px 5px rgb(115, 115, 115); 
+      }
+
+      .navbar h3 {
+        /* Removes default margin */
+        color: black;
+        text-align: center;
+        flex-grow: 1;
+        margin-left: 9%;
+      }
+
+      input {
+        height: 100%;
+        width: 75%;
+        display: block;
+        border-radius: 25px;
+        font-size: 20px;
+        padding: 8px 40px 8px 20px;
+        border: 2.4px black solid;
+      }
+
+      input:focus {
+        outline: none;
+      }
+
+      .search-container {
+        display: flex;  
+        justify-content: center;  
+        align-items: center;  
+        flex-grow: 1;  
+      }
+
+      input[type="search"] {
+        padding: 10px 20px 10px 0px; /* Adjust padding */
+        border: 1px solid #ccc;
+        border-radius: 25px; /* Rounded corners */
+        width: 300px; /* Adjust width */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        outline: none;
+        transition: border-color 0.3s; /* Smooth transition */
+      }
+      input[type="search"] :focus {
+        border-color: #007bff;
+      }
+
+      i {
+        font-size: 25px;
+        transition: all 0.2s ease 0s;
+      }
+
+      i:hover {
+        color: rgb(0, 140, 255);
+      }
+
+      button {
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+
+      ul {
+        list-style: none;
+      }
+      li {
+        display: inline-block;
+        margin-right: 1px;
+      }
+
+      .cart {
+        color: white;
+         
+        left: 0;
+        align-items: left;
+        margin-right: 30px;
+        margin-left: 10px;
+        padding-bottom: 10px;
+      }
+
+      .box { 
+        transition: 0.15s;
+      width: calc(30% - 2px); /* 25% width minus margins (10px each side) */
+        height: 400px; 
+        margin: 10px;  
+        background-color: rgb(0, 0, 0);  
+        display: flex;  
+        flex-direction: column;  
+        align-items: center;  
+        justify-content: flex-start;  
+        padding: 10px;  
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);  
+        padding: 0;
+        overflow: hidden;
+        border-radius: 6% 0 0 0;
+        border-top-right-radius: 6%;
+      }
+
+
+.box:hover
+{ 
+ transform: scale(1.05);
+}
+      .image { 
+  image-resolution: 1080px;
+        background-size:contain;
+        background-repeat:no-repeat;
+        background-color: white;
+        background-position: center;
+        width: 100%;  
+        height: 100%; 
+        background-image: url("Gallary/bags/bag1.jpg");  
+        border-radius: 5% 0 0 0;
+        border-top-right-radius: 5%;
+        border-bottom-width: 10px;
+      }
+
+      .product-info {
+        display: flex;  
+        justify-content: space-between; 
+        align-items: center;  
+        width: 100%; 
+        padding: 10px;  
+      }
+
+      .product-price {
+        margin-right: 10px;
+        text-align: left;           
+        font-size: 25px;
+        color: rgb(255, 255, 255); 
+      }
+
+      .product-button {
+        background: none; 
+        border: none;     
+        cursor: pointer;  
+      }
+      #d {
+        margin-top: 100px;
+      }
+      .container {
+        display: flex;
+        flex-wrap: wrap;          
+        justify-content: center;  
+        margin-top: 60px;
+      }
+
+
+      .Heading {
+        font-size: 20px;
+      }
+
+      h1 {
+        
+        padding-top: 60px;
+       padding-right: 200px;
+        font-size: 70px;
+      }
+
+      .circle1 {
+        
+        padding-left: 100px;
+        width: 100px;
+        height: 200px;
+        background-color:#B9A394;
+        border-radius: 200px;
+        margin-left: 40px;
+      }
+    .circle2 {
+      
+        padding-left: 100px;
+        width: 20px;
+        height: 120px;
+        background-color: rgb(0, 0, 0);
+        border-radius: 200px;
+        margin-right: -50px;
+        margin-top: -100px;
+        float: right;
+      }
+
+      .woman {
+        font-size: 70px;
+        padding-top: 50px;
+      }
+
+      /* TRYING STUFF */
+      .responsive-text {
+        font-size: 50px;  
+        color: #333;  
+        padding: 20px; 
+        text-align: right;  
+        border: 2px solid #007bff; 
+        border-radius: 10px;        
+        background-color: #f8f9fa; 
+      }
+               .navbar2
+      {
+
+        min-height: 30px;
+        z-index: 1000;
+        background-color: BLACK;
+        width: 100%;
+        height: 80px;
+        padding: 0;
+        position: fixed;                           
+        top: 81px;                                 
+        display: flex;
+        justify-content: space-between;            
+        align-items: center;
+        padding: 0 0;                              
+        box-shadow: 0 2px 5px rgb(115, 115, 115); 
+    
+      }
+      
+      a
+      {
+text-decoration: none;
+      }
+
+      .nav1 li {   
+        display: inline-block;
+        margin-right: 1px;
+      }
+      
+      .nav2 li{
+        display: inline-block;
+        margin-right: 1px;
+        padding-right: 30px;
+      }
+      .hover {
+  --c:linear-gradient(#ffffff 0 0); /* update the color here */
+  color: #ffffff;
+  padding-bottom: .15em;
+  background: var(--c), var(--c);
+  background-size: .3em .1em;
+  background-position:50% 100%;
+  background-repeat: no-repeat;
+  transition: .3s linear, background-size .3s .2s linear;
+}
+.hover:hover {
+  background-size: 40% .1em;
+  background-position: 10% 100%, 90% 100%;
+}
+body::-webkit-scrollbar{
+  display: none;
+}
+    </style>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body <!--style="background-color:rgb(255, 228, 196) ;-->">
+  <nav class="navbar" style="font-size: 30px; font-weight: bold">
+    <ul class="nav1">
+      <li>
+        <button><i class="fa-solid fa-bars"></i></button>
+      </li>
+      <li>
+        <button><i class="fa-solid fa-user"></i></button>
+      </li>
+      <li>
+        <button id="shop"><i class="fa-solid fa-cart-shopping"></i></button>
+      </li>
+    </ul>
+    <a href="/HomePage.html"><h3>PUNTO</h3></a>
+    <form><input type"search" placeholder="Search..."></form>
+  </nav>
+   <nav class="navbar2" style="font-size: 30px; font-weight: bold">
+    <ul style="margin-left: 300px;" class="nav2">
+      <li>
+      <a href="/sections/Style/styleMh&tshirts.html" > <button  class="hover"  class="nav2color " style="font-size: 30px ;">TOPS</button></a>
+      </li>
+      <li>
+        <a href="/sections/Style/styleMshirts.html" > <button  class="hover"  class="nav2color "  style="font-size: 30px ;">SHIRTS</button></a>
+      </li>
+      <li>
+        <a href="/sections/Style/styleMshoes.html" >  <button  class="hover"  class="nav2color " style="font-size: 30px ;">SHOES</button></a>
+      </li>
+      <li>
+        <a href="/sections/Style/styleMpants.html" > <button  class="hover"  class="nav2color "  style="font-size: 30px ;">PANTS</button></a>
+      </li>
+    </ul>
+  </nav>
+
+    <!--END OF NAVIGATION BAR-->
+
+    <div class="circle1" style="margin-top: 180px;">
+     <h1 style= "margin-top: 0px; ">SHIRTS</h1> 
+  </div>
+</div>
+  <div class="circle2" style="margin-bottom:-400px;"></div>
+    <div class="container" id="boxContainer"></div>
+
+    <script>
+      let pric=[200,150,80,40,25,35,40,36,36,25,160,170,175,100,160];
+      document.addEventListener("DOMContentLoaded", printBox);
+      function printBox() {
+        const container = document.getElementById("boxContainer"); // Get the container element
+        container.innerHTML = "";
+        const numberOfBoxes = 10;
+        for (let i = 1; i <= numberOfBoxes; i++) {
+          const box = document.createElement("div"); // Create a new div element
+          box.className = "box"; // Assign the box class
+
+          const image = document.createElement("div"); // Create a new div for the image
+          image.className = "image"; // Assign the image class
+          image.style.backgroundImage = `url("GalleryM/shirt/shirts&j${i}.JPG")`;
+
+          const productInfo = document.createElement("div"); // Create a div for product info
+          productInfo.className = "product-info"; // Assign the product info class
+          const productButton = document.createElement("button"); // Create a button for product
+          productButton.className = "product-button"; // Assign the product button class
+          productButton.innerHTML =
+            '<i class="fa-solid fa-cart-shopping cart"></i>';
+
+          const productPrice = document.createElement("div"); // Create a div for product price
+          productPrice.className = "product-price"; // Assign the product price class
+          productPrice.textContent = (1000*pric[i-1]) + " IQD"; // Set product price text
+
+          // Create a button for adding to cart
+          // Set button text with icon
+
+          // Append elements to the productInfo in the correct order
+          productInfo.appendChild(productButton);
+          productInfo.appendChild(productPrice); // Add the product price to the product info first
+
+          // Set the onclick function for the button
+          productButton.onclick = function () {
+            const cart = document.getElementById("cart");
+            // const cartItems = cart.children;
+            const item = document.createElement("div");
+            item.className = "cart-item";
+            item.textContent = 30000 * (1 + i) + " IQD";
+            item.style.display = "flex";
+            item.style.justifyContent = "space-between";
+            item.style.alignItems = "center";
+            item.style.padding = "10px";
+            item.style.border = "1px solid black";
+            item.style.borderRadius = "10px";
+            item.style.margin = "10px";
+            item.style.width = "100%";
+            item.style.height = "50px";
+            cart.appendChild(item);
+          };
+
+          // Append elements to the container
+          container.appendChild(box); // Add the box to the container
+          box.appendChild(image); // Add the image to the box
+          box.appendChild(productInfo); // Add the product info to the box
+           // Add the product price to the product info
+          productInfo.appendChild(productButton); // Add the cart button next to the price
+        productInfo.appendChild(productPrice); }
+      }
+    </script>
+  </body>
+</html>

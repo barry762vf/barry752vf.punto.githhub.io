@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <style>
+       body,
+      html {
+        margin: 0; 
+        padding: 0;
+        overflow-x: hidden; 
+        font-family: Arial, sans-serif;
+      }
+      .navbar {
+        min-height: 30px;
+        z-index: 1000;
+        background-color: white;
+        width: 100%;
+        height: 80px;
+        padding: 0;
+        position: fixed; 
+        top: 0; 
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 0; 
+        
+        box-shadow: 0 2px 5px rgb(115, 115, 115); /* Optional shadow for effect */
+      }
+      .imgStyle {
+        width: 45px;
+        height: fixed;
+        justify-content: left;
+        margin: 3px;
+      }
+      .navbar h3 {
+        /* Removes default margin */
+        color: black;
+        text-align: center;
+        flex-grow: 1;
+        margin-left: 9%;
+      }
+      input {
+        height: 100%;
+        width: 75%;
+        display: block;
+        border-radius: 25px;
+        font-size: 20px;
+        padding: 8px 40px 8px 20px;
+        border: 2.4px black solid;
+      }
+      input:focus {
+        outline: none;
+      }
+
+      .search-container {
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        flex-grow: 1;
+      }
+
+      input[type="search"] {
+        padding: 10px 20px 10px 0px; /* Adjust padding */
+        border: 1px solid #ccc;
+        border-radius: 25px; /* Rounded corners */
+        width: 300px; /* Adjust width */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        outline: none;
+        transition: border-color 0.3s; /* Smooth transition */
+      }
+      input[type="search"] :focus {
+        border-color: #007bff;
+      }
+     i {
+        font-size: 25px;
+        transition: all 0.2s ease 0s;
+      }
+      i:hover {
+        color: rgb(0, 140, 255);
+      }
+
+      button {
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+
+      ul {
+        list-style: none;
+      }
+      li {
+        display: inline-block;
+        margin-right: 1px;
+      }
+
+      /*End of NAV BAR*/
+      .container {
+        display: flex;
+        gap: -1px;
+      }
+      .box {
+         border: 4px solid black;
+        transition: 0.15s;
+        width: calc(90% - 4px);
+        height: 500px;
+        display: flex;
+        align-items: center; 
+        justify-content: space-evenly;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); 
+        overflow: hidden;
+        border-radius: 6% 0 0 0;
+        border-top-right-radius: 6%;
+        margin: 60px 20px 70px 20px;
+        border-radius:30px;
+
+
+      }
+
+      .box:hover
+      {
+        transform: scale(1.05);
+      }
+.bigIamge{
+    width: 100%;
+    object-fit: cover;
+    height: 650px;
+    background-image: url("/sections/House/HouseGallary/HomePic1.jpg");
+      background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    margin-top: 80px;
+      display: flex;
+    position: relative;
+}
+.imagWithtext{
+    position: absolute;
+    top: 1%;
+    left: 3%;
+    color: black;
+    font-size: 30px;
+
+}
+.bigIamge span {
+    position: absolute; /* Change to absolute positioning */
+    bottom: 40px; /* Adjust the position as needed */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Centering adjustment */
+    font-size: 160px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    color: white; /* Ensure the text is white for contrast */
+    z-index: 10; /* Bring it to the front */
+
+}
+.imagWithtext li{padding-right: 60px;}
+
+
+      .image1 {
+      
+        image-resolution: 1080px;
+        padding: 10px;
+        /*margin: 5px;*/
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 100%; 
+        height: 100%;
+        background-image: url("/sections/House/HouseGallary/91uZHSJMtWS.jpg"); 
+
+      }
+
+      .image2 {
+ 
+        /*margin: 10px;*/
+        image-resolution: 1080px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        width: 100%; 
+        height: 100%;
+        background-image: url("/sections/House/HouseGallary/pngtree-rendering-a-cozy-white-sofa-in-3d-picture-image_3758274.jpg");
+     }
+
+      .image3 {
+      
+        image-resolution: 1080px;
+        padding: 10px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 100%; 
+        height: 100%;
+        background-image: url("/sections/House/HouseGallary/pngtree-modern-indoor-plant-on-white-background-png-image_13981607.png"); 
+
+      }
+
+      .image4 {
+ 
+        /*margin: 10px;*/
+        image-resolution: 1080px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        width: 100%; 
+        height: 100%;
+        background-image: url("/sections/House/HouseGallary/KS-Spotlight1-DropInSinks2.jpg");
+        border-radius:20px;}
+
+      .image5 {
+      
+        image-resolution: 1080px;
+        padding: 10px;
+        /*margin: 5px;*/
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 100%; 
+        height: 100%;
+        background-image: url("/sections/House/HouseGallary/toilets-sm-1t803-64_1000-e1667522054109.jpg"); 
+
+      }
+
+      .image6 {
+ 
+        /*margin: 10px;*/
+        image-resolution: 1080px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        width: 100%; 
+        height: 100%;
+        background-image: url("/sections/House/HouseGallary/Whirlpool-Heated-Soaking-Bathtub-.jpg");
+     }
+
+      .image7 {
+      
+        image-resolution: 1080px;
+        padding: 10px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 100%; 
+        height: 100%;
+        background-image: url("/sections/House/HouseGallary/Urban-7.jpg"); 
+      }
+
+      .image8 {
+ 
+        /*margin: 10px;*/
+        image-resolution: 1080px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        width: 100%; 
+        height: 100%;
+        background-image: url("/sections/House/HouseGallary/beds-for-small-rooms.png");
+        border-radius:20px;}
+
+      .image9 {
+      
+        image-resolution: 1080px;
+        padding: 10px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 100%; 
+        height: 100%;
+        background-image: url("/sections/House/HouseGallary/shutterstock_724857655.jpg"); 
+
+      }
+
+      .image10 {
+ 
+        /*margin: 10px;*/
+        image-resolution: 1080px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+        width: 100%; 
+        height: 100%;
+        background-image: url("/sections/House/HouseGallary/Table_New_Design_Wardrobe_With_Dressing_Table-27.jpg");
+        border-radius:20px;}
+
+       .box:hover .image1,
+        .box:hover .image2,
+         .box:hover .image3,
+          .box:hover .image4,
+           .box:hover .image5,
+            .box:hover .image6,
+             .box:hover .image7,
+              .box:hover .image8,
+               .box:hover .image9,
+                .box:hover .image10{
+        filter: blur(5px);
+       }
+
+       .box:hover .text1{
+        opacity: 1;
+       }
+       a
+       {
+        text-decoration: none
+       }
+      .circle1 {
+        /*margin-left: 100%;*/
+        /* padding-top: 10st0px;*/
+        padding-left: 100px;
+        width: 100px;
+        height: 200px;
+        background-color:#B9A394;
+        border-radius: 200px;
+        margin-left: 40px;
+      }
+    .circle2 {
+        /*margin-left: 100%;*/
+        /* padding-top: 10st0px;*/
+        padding-left: 100px;
+        width: 20px;
+        height: 120px;
+        background-color: rgb(0, 0, 0);
+        border-radius: 200px;
+        margin-right: -50px;
+        margin-top: -100px;
+        float: right;
+      }
+      h1
+      {
+       padding-top: 60px;
+       padding-right: 200px;
+       font-size: 70px;
+      }
+
+
+
+  .text1 
+  {
+  position: absolute; 
+  text-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+  font-size: 80px;
+  color: white;
+  text-align: center;
+  opacity: 0; 
+  transition: opacity 0.3s;
+}
+
+      a
+      {
+text-decoration: none;
+      }
+
+
+      .nav1 li {
+        display: inline-block;
+        margin-right: 1px;
+      }
+      .nav2 li{
+        display: inline-block;
+        margin-right: 1px;
+        padding-right: 30px;
+      }
+body::-webkit-scrollbar{
+  display: none;
+}
+.navbar2
+      {
+color: white;
+        min-height: 30px;
+        z-index: 1000;
+        background-color: BLACK;
+        width: 100%;
+        height: 80px;
+        padding: 0;
+        position: fixed; 
+        top: 81px; 
+        display: flex;
+        justify-content: space-between; 
+        align-items: center;
+        padding: 0 0; 
+        box-shadow: 0 2px 5px rgb(115, 115, 115);
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar" style="font-size: 30px; font-weight: bold">
+      <ul class="nav1">
+        <li>
+          <button><i class="fa-solid fa-bars"></i></button>
+        </li>
+        <li>
+          <button><i class="fa-solid fa-user"></i></button>
+        </li>
+        <li>
+          <button><i class="fa-solid fa-cart-shopping"></i></button>
+        </li>
+      </ul>
+      <a href="/HomePage.html" type="none"><h3>PUNTO</h3></a>
+      <form><input type"search" placeholder="Search..."></form>
+    </nav>
+
+<div class="bigIamge" > <span>HOME</span></div>
+
+
+<div style="background-color: #90afc5; width: 100%;">
+    <div class="container">
+      <div class="box">
+         <a href="/sections/House/Tables.html"  style="display: flex; justify-content: center; align-items: center; position: relative; height: 100%; width: 100%;">
+        <div class="image1">
+        </div>
+     <div class="text1">TABLES</div>
+        </div></a>
+
+        <div class="box">
+           <a href="/sections/House/Sofas.html"  style="display: flex; justify-content: center; align-items: center; position: relative; height: 100%; width: 100%;">
+        
+          <div class="image2">
+          </div> hi
+          <!-- End of the first section-->
+       <div class="text1">SOFAS</div>
+          </div></a> </div></div>
+
+          <div style="background-color: #2a3131; width: 100%;">
+   <div class="container">
+      <div class="box">
+         <a href="/sections/House/plants.html"  style="display: flex; justify-content: center; align-items: center; position: relative; height: 100%; width: 100%;">
+        <div class="image3">
+        </div>
+     <div class="text1">PLANTS</div>
+        </div></a>
+
+      <div class="box">
+         <a href="/sections/House/sink.html"  style="display: flex; justify-content: center; align-items: center; position: relative; height: 100%; width: 100%;">
+        <div class="image4">
+        </div>
+     <div class="text1">SINK</div>
+        </div></a></div> </div>
+
+<div style="background-color: #763526; width: 100%;">
+    <div class="container">
+      <div class="box">
+         <a href="/sections/House/bathTubs.html"  style="display: flex; justify-content: center; align-items: center; position: relative; height: 100%; width: 100%;">
+        <div class="image6">
+        </div>
+     <div class="text1">BATHTUBS</div>
+        </div></a>
+
+        <div class="box">
+           <a href="/sections/House/toilet.html"  style="display: flex; justify-content: center; align-items: center; position: relative; height: 100%; width: 100%;">
+        
+          <div class="image5">
+          </div>
+       <div class="text1">TOILET</div>
+          </div></a> </div> </div>
+          <div style="background-color: #90afc5; width: 100%;">
+   <div class="container">
+      <div class="box">
+         <a href="/sections/House/Mirror.html"  style="display: flex; justify-content: center; align-items: center; position: relative; height: 100%; width: 100%;">
+        <div class="image7">
+        </div>
+     <div class="text1">MIRRORS</div>
+        </div></a>
+
+      <div class="box">
+         <a href="/sections/House/bed.html"  style="display: flex; justify-content: center; align-items: center; position: relative; height: 100%; width: 100%;">
+        <div class="image8">
+        </div>
+     <div class="text1">BEDS</div>
+        </div></a></div> </div>
+ <div style="background-color: #2a3131; width: 100%;">
+         <div class="container">
+      <div class="box">
+         <a href="/sections/House/wardrobe.html"  style="display: flex; justify-content: center; align-items: center; position: relative; height: 100%; width: 100%;">
+        <div class="image9">
+        </div>
+     <div class="text1">WARDROBE</div>
+        </div></a>
+
+      <div class="box">
+         <a href="/sections/House/dressingTables.html"  style="display: flex; justify-content: center; align-items: center; position: relative; height: 100%; width: 100%;">
+        <div class="image10">
+        </div>
+     <div class="text1">DRESSING TABLE</div>
+        </div></a></div></div>
+
+
+
+  </body>
+</html>
