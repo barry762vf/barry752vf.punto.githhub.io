@@ -10,8 +10,7 @@
     />
     <style>
 
-      body,
-      html
+      body
       {
         margin: 0; 
         padding: 0;
@@ -30,7 +29,6 @@
         display: flex;
         justify-content: space-between; 
         align-items: center;
-        padding: 0 0; 
         box-shadow: 0 2px 5px rgb(115, 115, 115);
       
       }
@@ -51,29 +49,6 @@
         font-size: 20px;
         padding: 8px 40px 8px 20px;
         border: 2.4px black solid;
-      }
-
-      input:focus {
-        outline: none;
-      }
-
-     .search-container {
-        display: flex; 
-        justify-content: center;
-        align-items: center; 
-        flex-grow: 1; 
-      }
-      input[type="search"] {
-        padding: 10px 20px 10px 0px; /* Adjust padding */
-        border: 1px solid #ccc;
-        border-radius: 25px; /* Rounded corners */
-        width: 300px; /* Adjust width */
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        outline: none;
-        transition: border-color 0.3s; /* Smooth transition */
-      }
-      input[type="search"] :focus {
-        border-color: #007bff;
       }
 
       i {
@@ -126,7 +101,6 @@
         flex-direction: column; 
         align-items: center; 
         justify-content: flex-start; 
-        padding: 10px; 
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); 
         padding: 0;
         overflow: hidden;
@@ -220,23 +194,8 @@
      button{
       color: black;
      }
-a{
- text-decoration: none
-}
-     .responsive-text {
-       font-size: 50px;
-       color: #333;
-       padding: 20px; 
-       text-align: right; 
-       border: 2px solid #007bff; 
-       border-radius: 10px; 
-       background-color: #f8f9fa; 
-     }
 
-     a
-     {
-text-decoration: none;
-     }
+
 
 
 .hover:hover {
@@ -267,7 +226,6 @@ body::-webkit-scrollbar{
        display: flex;
        justify-content: space-between; 
        align-items: center;
-       padding: 0 0; 
        box-shadow: 0 2px 5px rgb(115, 115, 115);
        
      }
@@ -316,7 +274,7 @@ body::-webkit-scrollbar{
         left: 0;
         width: 250px;
         border-radius: 0 20px 20px 0; 
-        height: 330px;
+        height: 130px;
         background-color: rgba(0, 0, 0, 0.7);
         transform: translateX(-100%); /* Initially hidden */
         transition: transform 0.3s ease;
@@ -400,7 +358,7 @@ body::-webkit-scrollbar{
        </li>
      </ul>
      <a href="/HomePage.html"><h3>PUNTO</h3></a>
-     <form><input class="search-container" placeholder="Search..."></form>
+     <form><input class="search-container" type="search" placeholder="Search..."></form>
    </nav>
   
   <nav class="navbar2" style="font-size: 30px; font-weight: bold">
@@ -484,25 +442,7 @@ body::-webkit-scrollbar{
           productInfo.appendChild(productButton);
           productInfo.appendChild(productPrice); // Add the product price to the product info first
 
-          // Set the onclick function for the button
-          productButton.onclick = function () {
-            const cart = document.getElementById("cart");
-            // const cartItems = cart.children;
-            const item = document.createElement("div");
-            item.className = "cart-item";
-            item.textContent = 30000 * (1 + i) + " IQD";
-            item.style.display = "flex";
-            item.style.justifyContent = "space-between";
-            item.style.alignItems = "center";
-            item.style.padding = "10px";
-            item.style.border = "1px solid black";
-            item.style.borderRadius = "10px";
-            item.style.margin = "10px";
-            item.style.width = "100%";
-            item.style.height = "50px";
-            cart.appendChild(item);
-          };
-
+       
           // Append elements to the container
           container.appendChild(box); // Add the box to the container
           box.appendChild(image); // Add the image to the box

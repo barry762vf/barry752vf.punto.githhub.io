@@ -12,33 +12,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home Page</title>
     <style>
-      body,
-      html {
-        margin: 0; /* Remove default margin */
-        padding: 0; /* Remove default padding */
-        overflow-x: hidden; /* Prevent horizontal overflow */
+      body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* Prevent horizontal overflow 
+        , It hides any content that overflows the container’s width 
+        horizontally.his means if there’s content wider than the container, 
+         it will not be visible, and no horizontal scrollbar will appear.*/
         font-family: Arial, sans-serif;
       }
       .navbar {
         min-height: 30px;
+        /*If the content inside the element is less than 30px in height, the element will still be 30px tall.
+        If the content inside the element exceeds 30px, the element will expand to fit the content.*/
         z-index: 1000;
         background-color: white;
         width: 100%;
         height: 80px;
-        padding: 0;
         position: fixed; /* Makes the navbar stick to the top */
         top: 0; /* Positions it at the top */
         display: flex;
         justify-content: space-between; /* Centers the text vertically */
-        align-items: center;
-        padding: 0 0; /* Adds some padding */
-        box-shadow: 0 2px 5px rgb(115, 115, 115); /* Optional shadow for effect */
+        align-items: center; /* to center the text y-axis */
+        box-shadow: 0 2px 5px rgb(115, 115, 115);
+        font-size: 30px;
+        font-weight: bold;
       }
 
       .navbar h3 {
         color: black;
-        text-align: center;
-        flex-grow: 1;
         margin-left: 9%;
       }
 
@@ -48,13 +50,11 @@
         background-color: black;
         width: 100%;
         height: 200px;
-        padding: 0;
         bottom: 0; /* Positions it at the top */
         display: flex;
         justify-content: space-between; /* Centers the text vertically */
         align-items: center;
         font-size: 30px;
-        box-shadow: 0 2px 5px rgb(115, 115, 115); /* Optional shadow for effect */
       }
 
       input {
@@ -65,32 +65,6 @@
         font-size: 20px;
         padding: 8px 40px 8px 20px;
         border: 2.4px black solid;
-      }
-      input:focus {
-        outline: none;
-      }
-      .search-container {
-        display: flex; 
-        justify-content: center;
-        align-items: center; 
-        flex-grow: 1; 
-      }
-      input[type="search"] {
-        padding: 10px 20px 10px 0px; /* Adjust padding */
-        border: 1px solid #ccc;
-        border-radius: 25px; /* Rounded corners */
-        width: 300px; /* Adjust width */
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        outline: none;
-        transition: border-color 0.3s; /* Smooth transition */
-      }
-      input[type="search"] :focus {
-        border-color: #007bff;
-      }
-
-      i {
-        font-size: 25px;
-        transition: all 0.2s ease 0s;
       }
 
       i {
@@ -105,28 +79,22 @@
         border: none;
         cursor: pointer;
       }
-      .navbar ul {
+      .navbar ul,
+      .Lfooter ul,
+      .Rfooter ul {
         list-style: none;
       }
       .navbar li {
         display: inline-block;
         margin-right: 1px;
       }
-
-      .Lfooter ul {
-        list-style: none;
-      }
       .Lfooter li {
-
         display: inline-block;
         font-size: 25px;
         margin-right: 1px;
         padding-left: 35px;
       }
 
-      .Rfooter ul {
-        list-style: none;
-      }
       .Rfooter li {
         list-style: none;
         font-size: 25px;
@@ -140,11 +108,8 @@
       }
 
       body::-webkit-scrollbar {
+        /* Removes the scroll bar on the side*/
         display: none;
-      }
-      .sidebar li {
-        color: white;
-        padding-bottom: 30px;
       }
       .sidebar {
         text-align: center;
@@ -152,32 +117,30 @@
         top: 65px; /* Position it below the navbar */
         left: 0;
         width: 250px;
-        border-radius: 0 20px 20px 0; 
-        height: 330px;
+        border-radius: 0 20px 20px 0;
+        height: 130px;
         background-color: rgba(0, 0, 0, 0.5);
         transform: translateX(-100%); /* Initially hidden */
         transition: transform 0.3s ease;
         z-index: 999; /* Ensure it appears above other content */
       }
-        .sidebar ul {
-            list-style: none;
-            padding: 0;
-            width: 100%; /* Make the list take full width */
-            flex-grow: 1;
-        }
-        .sidebar li {
-          font-size: 20px;
-            padding: 15px;
-            text-align: center; /* Center text horizontally */
-            width: 100%; /* Make list items take full width */
-            margin-left: -40px;
-            border-radius: 0 20px 20px 0;
-        }
-         .sidebar li:hover {
-
-            background-color: rgb(255, 255, 255); /* Change background color on hover */
-            color: #000000; /* Change text color on hover */
-        }
+      .sidebar ul {
+        list-style: none;
+        width: 100%; /* Make the list take full width */
+      }
+      .sidebar li {
+        color: white;
+        font-size: 20px;
+        padding: 15px;
+        text-align: center; /* Center text horizontally */
+        width: 100%; /* Make list items take full width */
+        margin-left: -40px;
+        border-radius: 0 20px 20px 0;
+      }
+      .sidebar li:hover {
+        background-color: rgb(255,255,255); /* Change background color on hover */
+        color: #000000; /* Change text color on hover */
+      }
       .sidebar.hidden {
         display: none; /* Optional: hide completely when not visible */
       }
@@ -187,38 +150,31 @@
       .VideoCont {
         padding-top: 20px;
         width: 100%;
-        height: 100vh;
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        height: 100vh; /*Combination between percentage and pixels*/
+        position: relative; /*top bottom left right can only be used with position keyword */
       }
       .VideoCont video {
-        image-resolution: 1080px;
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: cover; /*covers the whole container */
       }
-      .VideoCont video::-webkit-media-controls-fullscreen-button {
-        display: none;
-      }
-      .VideoCont video::-webkit-media-controls-overflow-button {
-        display: none;
-      }
+
       span {
         font-size: 100px;
         font-weight: bold;
         color: white;
-        position: absolute;
+        position: absolute; /*to set it above all the layers*/
         bottom: 20%;
-        left: 50%;
-        transform: translateX(-50%);
+        left: 50%; /* Takes the left edge of the element and put it at the middle of the screen */
+        transform: translateX(
+          -50%
+        ); /* Now shift the element by half of its width so it’s perfectly centred */
         cursor: pointer;
       }
     </style>
   </head>
   <body>
-    <nav class="navbar" style="font-size: 30px; font-weight: bold">
+    <nav class="navbar">
       <ul>
         <li>
           <button id="toggleSidebar"><i class="fa-solid fa-bars"></i></button>
@@ -231,10 +187,10 @@
         </li>
       </ul>
       <a href="/HomePage.html"><h3>PUNTO</h3></a>
-      <form><input type"search" placeholder="Search..."></form>
+      <form><input type="search" placeholder="Search..."></form>
     </nav>
 
-    <ul class="sidebar hidden" id="sidebar" type="none">
+    <ul class="sidebar hidden" id="sidebar">
       <a href="/sections/House/HomeHomepage.html"><li>Home</li></a>
       <a href="/sections/Style/StyleHome.html"><li>Style</li></a>
     </ul>
@@ -289,7 +245,6 @@
       // Sidebar toggle functionality
       const toggleButton = document.getElementById("toggleSidebar");
       const sidebar = document.getElementById("sidebar");
-      const closeButton = document.getElementById("closeSidebar");
 
       // Toggle sidebar visibility when the toggle button is clicked
       toggleButton.addEventListener("click", () => {
@@ -297,22 +252,7 @@
         sidebar.classList.toggle("hidden"); // Toggle the hidden class
       });
 
-      // Close the sidebar when the close button is clicked
-      closeButton.addEventListener("click", () => {
-        sidebar.classList.add("hidden"); // Hide the sidebar
-        sidebar.classList.remove("visible"); // Ensure the visible class is removed
-      });
-
-      // Add click event to sidebar links to close the sidebar
-      const sidebarLinks = sidebar.querySelectorAll("li a");
-      sidebarLinks.forEach((link) => {
-        link.addEventListener("click", () => {
-          sidebar.classList.add("hidden"); // Hide the sidebar when a link is clicked
-          sidebar.classList.remove("visible"); // Ensure the visible class is removed
-        });
-      });
-    </script>
-    
+      </script>
 
     <nav class="footer">
       <ul style="color: white" class="Lfooter">
@@ -320,7 +260,7 @@
         <a href="/sections/Style/StyleHome.html"><li>Style</li></a>
       </ul>
       <a href="/HomePage.html" style="color: white"><h3>PUNTO</h3></a>
-      <ul style="color: white; padding-right: 20px;" class="Rfooter" >
+      <ul style="color: white; padding-right: 20px" class="Rfooter">
         <li>Abdullah Ahmed</li>
         <li>Doaa Hussein</li>
         <li>Nisreen Omar</li>

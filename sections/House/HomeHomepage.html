@@ -12,8 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home Page</title>
     <style>
-       body,
-      html {
+       body {
         margin: 0; 
         padding: 0;
         overflow-x: hidden; 
@@ -31,15 +30,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 0 0; 
-        
         box-shadow: 0 2px 5px rgb(115, 115, 115); /* Optional shadow for effect */
-      }
-      .imgStyle {
-        width: 45px;
-        height: fixed;
-        justify-content: left;
-        margin: 3px;
       }
       .navbar h3 {
         /* Removes default margin */
@@ -57,29 +48,7 @@
         padding: 8px 40px 8px 20px;
         border: 2.4px black solid;
       }
-      input:focus {
-        outline: none;
-      }
-
-      .search-container {
-        display: flex; 
-        justify-content: center; 
-        align-items: center; 
-        flex-grow: 1;
-      }
-
-      input[type="search"] {
-        padding: 10px 20px 10px 0px; /* Adjust padding */
-        border: 1px solid #ccc;
-        border-radius: 25px; /* Rounded corners */
-        width: 300px; /* Adjust width */
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        outline: none;
-        transition: border-color 0.3s; /* Smooth transition */
-      }
-      input[type="search"] :focus {
-        border-color: #007bff;
-      }
+     
      i {
         font-size: 25px;
         transition: all 0.2s ease 0s;
@@ -134,14 +103,7 @@
       display: flex;
     position: relative;
 }
-.imagWithtext{
-    position: absolute;
-    top: 1%;
-    left: 3%;
-    color: black;
-    font-size: 30px;
 
-}
 .bigIamge span {
     position: absolute; /* Change to absolute positioning */
     bottom: 40px; /* Adjust the position as needed */
@@ -153,14 +115,13 @@
     z-index: 10; /* Bring it to the front */
 
 }
-.imagWithtext li{padding-right: 60px;}
+
 
 
       .image1 {
       
         image-resolution: 1080px;
         padding: 10px;
-        /*margin: 5px;*/
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
@@ -171,8 +132,6 @@
       }
 
       .image2 {
- 
-        /*margin: 10px;*/
         image-resolution: 1080px;
         background-size: cover;
         background-repeat: no-repeat;
@@ -197,8 +156,6 @@
       }
 
       .image4 {
- 
-        /*margin: 10px;*/
         image-resolution: 1080px;
         background-size: cover;
         background-repeat: no-repeat;
@@ -213,7 +170,6 @@
       
         image-resolution: 1080px;
         padding: 10px;
-        /*margin: 5px;*/
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
@@ -225,7 +181,6 @@
 
       .image6 {
  
-        /*margin: 10px;*/
         image-resolution: 1080px;
         background-size: cover;
         background-repeat: no-repeat;
@@ -249,8 +204,6 @@
       }
 
       .image8 {
- 
-        /*margin: 10px;*/
         image-resolution: 1080px;
         background-size: cover;
         background-repeat: no-repeat;
@@ -276,7 +229,7 @@
 
       .image10 {
  
-        /*margin: 10px;*/
+      
         image-resolution: 1080px;
         background-size: cover;
         background-repeat: no-repeat;
@@ -303,13 +256,8 @@
        .box:hover .text1{
         opacity: 1;
        }
-       a
-       {
-        text-decoration: none
-       }
       .circle1 {
-        /*margin-left: 100%;*/
-        /* padding-top: 10st0px;*/
+   
         padding-left: 100px;
         width: 100px;
         height: 200px;
@@ -318,8 +266,7 @@
         margin-left: 40px;
       }
     .circle2 {
-        /*margin-left: 100%;*/
-        /* padding-top: 10st0px;*/
+       
         padding-left: 100px;
         width: 20px;
         height: 120px;
@@ -349,10 +296,6 @@
   transition: opacity 0.3s;
 }
 
-      a
-      {
-text-decoration: none;
-      }
 
 
       .nav1 li {
@@ -408,7 +351,7 @@ color: white;
         left: 0;
         width: 250px;
         border-radius: 0 20px 20px 0; 
-        height: 330px;
+        height: 130px;
         background-color: rgba(0, 0, 0, 0.7);
         transform: translateX(-100%); /* Initially hidden */
         transition: transform 0.3s ease;
@@ -485,7 +428,7 @@ color: white;
         </li>
       </ul>
       <a href="/HomePage.html" type="none"><h3>PUNTO</h3></a>
-      <form><input type"search" placeholder="Search..."></form>
+      <form><input type="search" placeholder="Search..."></form>
     </nav>
 
 <div class="bigIamge" > <span>HOME</span></div>
@@ -504,7 +447,7 @@ color: white;
            <a href="/sections/House/Sofas.html"  style="display: flex; justify-content: center; align-items: center; position: relative; height: 100%; width: 100%;">
         
           <div class="image2">
-          </div> hi
+          </div> 
           <!-- End of the first section-->
        <div class="text1">SOFAS</div>
           </div></a> </div></div>
