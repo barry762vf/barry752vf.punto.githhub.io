@@ -292,6 +292,86 @@ body::-webkit-scrollbar{
   background-position: 10% 100%, 90% 100%;
 }
 
+.footer {
+        min-height: 30px;
+        z-index: 1000;
+        background-color: black;
+        width: 100%;
+        height: 200px;
+        padding: 0;
+        bottom: 0; /* Positions it at the top */
+        display: flex;
+        justify-content: space-between; /* Centers the text vertically */
+        align-items: center;
+        font-size: 30px;
+        box-shadow: 0 2px 5px rgb(115, 115, 115); /* Optional shadow for effect */
+      
+      }
+
+       .sidebar {
+        text-align: center;
+        position: fixed; /* Make the sidebar fixed */
+        top: 65px; /* Position it below the navbar */
+        left: 0;
+        width: 250px;
+        border-radius: 0 20px 20px 0; 
+        height: 330px;
+        background-color: rgba(0, 0, 0, 0.7);
+        transform: translateX(-100%); /* Initially hidden */
+        transition: transform 0.3s ease;
+        z-index: 1001; /* Ensure it appears above other content */
+      }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            width: 100%; /* Make the list take full width */
+            flex-grow: 1;
+        }
+        .sidebar li {
+          font-size: 20px;
+            padding: 15px;
+            text-align: center; /* Center text horizontally */
+            width: 100%; /* Make list items take full width */
+            margin-left: -40px;
+            border-radius: 0 20px 20px 0;
+        }
+         .sidebar li:hover {
+
+            background-color:rgb(255, 255, 255); /* Change background color on hover */
+            color: #000000; /* Change text color on hover */
+        }
+      .sidebar.hidden {
+        display: none; /* Optional: hide completely when not visible */
+      }
+      .sidebar.visible {
+        transform: translateX(0); /* Show the sidebar */
+      }
+       .Lfooter ul {
+        list-style: none;
+      }
+      .Lfooter li {
+
+        display: inline-block;
+        font-size: 25px;
+        margin-right: 1px;
+        padding-left: 35px;
+      }
+
+      .Rfooter ul {
+        list-style: none;
+      }
+      .Rfooter li {
+        list-style: none;
+        font-size: 25px;
+        margin-right: 1px;
+        padding-left: 35px;
+      }
+
+      a {
+        text-decoration: none;
+        color: white;
+      }
+
 
     </style>
 
@@ -299,12 +379,16 @@ body::-webkit-scrollbar{
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>dressingTables</title>
   </head>
-
+  
   <body <!--style="background-color:rgb(255, 228, 196) ;-->">
+    <ul class="sidebar hidden" id="sidebar" type="none">
+      <a href="/sections/House/HomeHomepage.html"><li>Home</li></a>
+      <a href="/sections/Style/StyleHome.html"><li>Style</li></a>
+    </ul>
     <nav class="navbar" style="font-size: 30px; font-weight: bold">
       <ul class="nav1">
         <li>
-          <button><i class="fa-solid fa-bars"></i></button>
+          <button id="toggleSidebar"><i class="fa-solid fa-bars"></i></button>
         </li>
         <li>
           <button><i class="fa-solid fa-user"></i></button>
@@ -424,6 +508,37 @@ body::-webkit-scrollbar{
           productInfo.appendChild(productButton); // Add the cart button next to the price
         productInfo.appendChild(productPrice); }
       }
+      document.addEventListener("DOMContentLoaded", function(){
+  const toggleButton = document.getElementById("toggleSidebar");
+  const sidebar = document.getElementById("sidebar");
+
+  toggleButton.addEventListener("click", () => {
+    sidebar.classList.toggle("visible");
+    sidebar.classList.toggle("hidden");
+  });
+
+  // Optional: Close the sidebar when a link is clicked
+  const sidebarLinks = sidebar.querySelectorAll("li a");
+  sidebarLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      sidebar.classList.add("hidden");
+      sidebar.classList.remove("visible");
+    });
+  });
+});
     </script>
+    <nav class="footer">
+      <ul style="color: white" class="Lfooter">
+        <a href="/sections/House/HomeHomepage.html"><li>Home</li></a>
+        <a href="/sections/Style/StyleHome.html"><li>Style</li></a>
+      </ul>
+      <a href="/HomePage.html" style="color: white"><h3>PUNTO</h3></a>
+      <ul style="color: white; padding-right: 20px;" class="Rfooter" >
+        <li>Abdullah Ahmed</li>
+        <li>Doaa Hussein</li>
+        <li>Nisreen Omar</li>
+        <li>Nooreldeen</li>
+      </ul>
+    </nav>
   </body>
 </html>
